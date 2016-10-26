@@ -1,10 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js"></script>
-        <script src="script.js"></script>
-        <link type="text/css" rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-    </body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+			<title>Excel To HTML using codebeautify.org</title>
+		</head>
+		<body>
+			<!DOCTYPE html>
+			<html class="">
+				<head>
+					<meta charset="UTF-8">
+						<meta name="robots" content="noindex">
+							<style>body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+</style>
+						</head>
+						<body>
+							<script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r66/three.min.js"></script>
+							<script>var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(
+  100, // field of view
+  window.innerWidth / window.innerHeight, // aspect ratio
+  0.1, // near clipping plane
+  1000); // far clipping plane
+
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+function createCylinder(color) {
+  var geometry = new THREE.CylinderGeometry(
+    50, // too radius
+    1, // bottom radius
+    200, // height
+    320 // height segments
+  );
+  var material = new THREE.MeshBasicMaterial({
+    color: color,
+    wireframe: true
+  });
+  var cylinder = new THREE.Mesh(geometry, material);
+  scene.add(cylinder);
+  return cylinder;
+}
+
+var c1 = createCylinder('#0000ab');
+var c2 = createCylinder('#3030cc');
+var c3 = createCylinder('#6060cc');
+var c4 = createCylinder('#30a0cc');
+var c5 = createCylinder('#3090aa');
+var c6 = createCylinder('#009900');
+
+camera.position.z = 4;
+
+function render() {
+  requestAnimationFrame(render);
+  renderer.render(scene, camera);
+}
+render();
+
+setInterval(function() {
+  c1.rotation.z += 0.001;
+  c1.rotation.y += 0.001;
+  c2.rotation.z += 0.0015;
+  c2.rotation.y += 0.0015;
+  c3.rotation.z += 0.002;
+  c3.rotation.y += 0.002;
+  c4.rotation.z += 0.0005;
+  c4.rotation.y += 0.0005;
+  c5.rotation.z += 0.0025;
+  c5.rotation.y += 0.0025;
+  c6.rotation.z += 0.0002;
+  c6.rotation.y += 0.0002;
+}, 10);
+
+document.querySelectorAll('canvas').ctx.globalCompositeOperation = 'lighter';
+//# sourceURL=pen.js
+</script>
+							<canvas width="1600" height="269"></canvas>
+						</body>
+					</html>
+				</body>
+			</html>
